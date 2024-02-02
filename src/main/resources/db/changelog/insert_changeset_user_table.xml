@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+>
+    <changeSet id="insert-into-user" author="GD">
+    <insert tableName="user" schemaName="entity">
+        <column name="email" value="Admin@mail.ru"/>
+        <column name="password" value="admin"/>
+        <column name="first_name" value="Admin"/>
+        <column name="last_name" value="Admin"/>
+        <column name="role" value="ADMIN"/>
+    </insert>
+    <insert tableName="user" schemaName="entity">
+        <column name="email" value="User2@mail.ru"/>
+        <column name="password" value="user2"/>
+        <column name="first_name" value="User2"/>
+        <column name="last_name" value="User2"/>
+    </insert>
+    <insert tableName="user" schemaName="entity">
+        <column name="email" value="User3@mail.ru"/>
+        <column name="password" value="user3"/>
+        <column name="first_name" value="User3"/>
+        <column name="last_name" value="User3"/>
+    </insert>
+    <insert tableName="user" schemaName="entity">
+        <column name="email" value="User4@mail.ru"/>
+        <column name="password" value="user4"/>
+        <column name="first_name" value="User4"/>
+        <column name="last_name" value="User4"/>
+    </insert>
+    </changeSet>
+</databaseChangeLog>

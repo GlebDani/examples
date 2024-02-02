@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+
+    <changeSet id="create_sequence_for_table_user" author="GD">
+        <createSequence sequenceName="seq_sequence_for_table_user"
+                        dataType="bigint"
+                        schemaName="support"
+                        incrementBy="1"
+                        minValue="1"
+                        startValue="1"/>
+    </changeSet>
+
+
+    <changeSet id="create_table_user" author="GD">
+        <!-- Прописываем создание таблицы genre-->
+        <createTable tableName="user" schemaName="entity">
+            <!--Создаем поля -->
+            <column name="user_id" type="bigint" defaultValueComputed="nextval('support.seq_sequence_for_table_user')">>
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="email" type="varchar(64)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="password" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role" type="varchar(10)" defaultValue="USER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

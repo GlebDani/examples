@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  postgres:
+    environment:
+      POSTGRES_USER: y_lab
+      POSTGRES_PASSWORD: ylab
+      POSTGRES_DB: Y-lab_bd
+    ports:
+      - "5432:5432"
+    image: postgres:16

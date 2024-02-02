@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="83e1fa58-8db3-417b-aebf-0b594ba12742" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/y_lab_db.9nqueA/schema/entity.4-Odsg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/y_lab_db.9nqueA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/y_lab_db.9nqueA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/y_lab_db.9nqueA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/y_lab_db.9nqueA/schema/support.z39ykQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_31_2024_11_44_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_31_2024_11_44_PM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_31_2024_11_44_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/Compilation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/Enum/Roles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/AuditDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/CounterDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/CounterTypeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/Authentication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/InputController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/model/Audit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/model/Counter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/model/CounterType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/AssistanceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/AuditService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/CounterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/CounterTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties.origin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/create_changeset_user_table.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/insert_changeset_user_table.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/liquibase.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Testing/AuthTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Testing/CounterDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Testing/CounterTypeDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Testing/InputControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Testing/UserDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Testing/UserServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/database.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/database.properties.origin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/db/changelog/changelog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/db/changelog/create_changeset_user_table.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/db/changelog/insert_changeset_user_table.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/liquibase.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/Compilation$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/Compilation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/Enum/Roles.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/dao/AuditDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/dao/CounterDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/dao/CounterTypeDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/dao/UserDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/in/Authentication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/in/InputController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/in/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/model/Audit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/model/Counter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/model/CounterType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/model/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/service/AuditService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/service/CounterService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/service/CounterTypeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ru/danilenko/service/UserService.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "C:/Users/danil/Desktop/Y_lab/Homework1",
+    "node.js.selected.package.tslint": "(autodetect)"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danil\Desktop\Y_lab\hometask1\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danil\Desktop\Y_lab\hometask1" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.danilenko.in" />
+    </key>
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+</project>
