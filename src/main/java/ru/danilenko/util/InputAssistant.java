@@ -1,4 +1,4 @@
-package ru.danilenko.service;
+package ru.danilenko.util;
 
 import lombok.AllArgsConstructor;
 import ru.danilenko.model.User;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 @AllArgsConstructor
-public class AssistanceService {
+public class InputAssistant {
 
     Scanner scanner;
 

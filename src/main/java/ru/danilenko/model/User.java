@@ -3,8 +3,8 @@ package ru.danilenko.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ru.danilenko.Enum.Roles;
 
 /**
  * Entity for user
@@ -12,6 +12,7 @@ import ru.danilenko.Enum.Roles;
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     private int id;
@@ -19,6 +20,6 @@ public class User {
     private String password;
     private String firstName;
     private String lastName;
-    private Roles role;
+    private String role;
 
 }

@@ -2,8 +2,13 @@ package ru.danilenko;
 
 import ru.danilenko.dao.*;
 import ru.danilenko.in.Authentication;
+import ru.danilenko.mapper.AuditMapper;
+import ru.danilenko.mapper.CounterMapper;
+import ru.danilenko.mapper.CounterTypeMapper;
+import ru.danilenko.mapper.UserMapper;
+import ru.danilenko.util.InputAssistant;
 import ru.danilenko.in.InputController;
-import ru.danilenko.in.UserController;
+import ru.danilenko.in.ActionController;
 import ru.danilenko.model.User;
 import ru.danilenko.service.*;
 
@@ -16,12 +21,12 @@ import java.util.Scanner;
 public class Compilation {
 
 
-    private AuditDAO auditDAO = new AuditDAO();
-    private CounterDAO counterDAO = new CounterDAO();
-    private CounterTypeDAO counterTypeDAO = new CounterTypeDAO();
-    private UserDAO userDAO = new UserDAO();
+    private AuditDAO auditDAO = new AuditDAO(new AuditMapper());
+    private CounterDAO counterDAO = new CounterDAO(new CounterMapper());
+    private CounterTypeDAO counterTypeDAO = new CounterTypeDAO(new CounterTypeMapper());
+    private UserDAO userDAO = new UserDAO(new UserMapper());
     private Scanner scanner = new Scanner(System.in);
-    private AssistanceService assistanceService = new AssistanceService(scanner);
+    private InputAssistant inputAssistant = new InputAssistant(scanner);
 
     private AuditService auditService = new AuditService(auditDAO);
     private CounterService counterService= new CounterService(counterDAO);
@@ -29,9 +34,9 @@ public class Compilation {
     private UserService userService= new UserService(userDAO);
 
 
-    private Authentication authentication = new Authentication(userService,assistanceService);
-    private UserController userController = new UserController(auditService,counterService,counterTypeService,userService,assistanceService );
-    private InputController inputController = new InputController(assistanceService ,userController);
+    private Authentication authentication = new Authentication(userService, inputAssistant);
+    private ActionController actionController = new ActionController(auditService,counterService,counterTypeService,userService, inputAssistant);
+    private InputController inputController = new InputController(inputAssistant, actionController);
 
     /**
      * Method which help to navigate over the app
@@ -62,26 +67,25 @@ public class Compilation {
 
     public boolean userMenu(User user){
          switch (user.getRole()){
-            case ROLE_USER -> {
+            case "USER"-> {
                 inputController.userActionDescription();
                 System.out.println("0 -> To quit.");
                 return inputController.userAction(user);
 
             }
-            case ROLE_MODERATOR -> {
+            case "MODERATOR" -> {
                 inputController.moderatorActionDescription();
                 System.out.println("0 -> To quit.");
                 return inputController.moderatorAction(user);
 
             }
-            case ROLE_ADMIN -> {
+            case "ADMIN" -> {
                 inputController.adminActionDescription();
                 System.out.println("0 -> To quit.");
                 return inputController.adminAction(user);
 
             }
-        };
-
+        }
         return false;
     }
 

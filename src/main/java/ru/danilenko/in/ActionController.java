@@ -1,33 +1,29 @@
 package ru.danilenko.in;
 
 import lombok.AllArgsConstructor;
-import ru.danilenko.dao.AuditDAO;
-import ru.danilenko.dao.CounterDAO;
-import ru.danilenko.dao.CounterTypeDAO;
-import ru.danilenko.dao.UserDAO;
 import ru.danilenko.model.Audit;
 import ru.danilenko.model.Counter;
 import ru.danilenko.model.CounterType;
 import ru.danilenko.model.User;
 import ru.danilenko.service.*;
+import ru.danilenko.util.InputAssistant;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.regex.Pattern;
 
 /**
  * User service is a layer to connect DAO's and user actions
  */
 @AllArgsConstructor
-public class UserController {
+public class ActionController {
 
     private AuditService auditService;
     private CounterService counterService;
     private CounterTypeService counterTypeService;
     private UserService userService;
-    private AssistanceService assistanceService;
+    private InputAssistant inputAssistant;
 
 
 
@@ -67,7 +63,7 @@ public class UserController {
         }
         else {
             System.out.println("Type the value");
-            int value = assistanceService.readIntValue(0);
+            int value = inputAssistant.readIntValue(0);
             counterService.insertValue(user.getId(), DateTimeFormatter.ofPattern("MM-yyyy").format(LocalDate.now()), value, counterTypeId);
             auditService.addAction(DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm").format(LocalDateTime.now()),user.getId(), "get insert a new value for "+counterTypeService.findById(counterTypeId).getDescription());
         }
@@ -83,7 +79,7 @@ public class UserController {
         if(counterTypeId==0)
             return true;
         System.out.println("Write the month number");
-        int monthNumber = assistanceService.readIntValue(1,12);
+        int monthNumber = inputAssistant.readIntValue(1,12);
         String date;
         if (monthNumber >LocalDate.now().getMonthValue())
             date =  DateTimeFormatter.ofPattern("MM-yyyy").format(LocalDate.of(LocalDate.now().getYear()-1, monthNumber ,1));
@@ -125,7 +121,7 @@ public class UserController {
     public boolean getAllUsersInfo(User user){
 
         List<User> userList = userService.findAllUser();
-        int value = assistanceService.listOfUsers(userList);
+        int value = inputAssistant.listOfUsers(userList);
         if (value==0)
             return true; // will return to main menu with actions
         int counterTypeId = getCounterType();
@@ -147,7 +143,7 @@ public class UserController {
      */
     public boolean giveModeratorRights(User user){
         List<User> userList = userService.findAllUser();
-        int value = assistanceService.listOfUsers(userList);
+        int value = inputAssistant.listOfUsers(userList);
         if (value==0)
             return true;// will return to main menu with actions
         userService.giveRight(userList.get(value-1).getId());
@@ -163,7 +159,7 @@ public class UserController {
     */
     public boolean usersAudit(){
         List<User> userList = userService.findAll();
-        int value = assistanceService.listOfUsers(userList);
+        int value = inputAssistant.listOfUsers(userList);
         if (value==0)
             return true;// will return to main menu with actions
         List<Audit> auditList = auditService.getAllForUser(value);
@@ -184,14 +180,17 @@ public class UserController {
         String desc;
         System.out.println("\"/\" to quit");
         do {
-            desc=assistanceService.nextLine();
+            desc= inputAssistant.nextLine();
         }while (desc.equals(""));
         if (desc.equals("/"))
             return true;// will return to main menu with actions
-        counterTypeService.addNewCounter(desc);
-        System.out.println("New counter of "+ desc+" created");
-
-        auditService.addAction(DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm").format(LocalDateTime.now()),user.getId(), "add new counter type "+ desc);
+        if(counterTypeService.ifExist(desc))
+            System.out.println("Counter is already existed");
+        else {
+            counterTypeService.addNewCounter(desc);
+            System.out.println("New counter of " + desc + " created");
+            auditService.addAction(DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm").format(LocalDateTime.now()), user.getId(), "add new counter type " + desc);
+        }
         return true;
     }
 
@@ -231,7 +230,7 @@ public class UserController {
             System.out.println(counterType.getCounterTypeId() +" -> "+counterType.getDescription());
         }
         System.out.println("0 -> To quit");
-        return assistanceService.readIntValue(0,allowedType.size());
+        return inputAssistant.readIntValue(0,allowedType.size());
     }
 
 

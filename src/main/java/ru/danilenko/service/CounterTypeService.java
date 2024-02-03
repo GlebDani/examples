@@ -15,8 +15,10 @@ public class CounterTypeService {
      * method add new counter type
      * @param desc name of counter
      */
-    public void addNewCounter(String desc){
-        counterTypeDAO.addNewCounterType(desc);
+    public boolean addNewCounter(String desc){
+        if(ifExist(desc))
+            return false;
+        return counterTypeDAO.addNewCounterType(desc);
     }
 
     public CounterType findById(int counterTypeId){
@@ -25,5 +27,11 @@ public class CounterTypeService {
 
     public List<CounterType> getAll() {
         return counterTypeDAO.getAll();
+    }
+
+    public boolean ifExist(String desc){
+        List<CounterType> list = getAll();
+        return list.stream().anyMatch(c-> c.getDescription().equalsIgnoreCase(desc));
+
     }
 }

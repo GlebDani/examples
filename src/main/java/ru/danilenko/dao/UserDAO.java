@@ -1,29 +1,23 @@
 package ru.danilenko.dao;
 
-import ru.danilenko.Enum.Roles;
+import lombok.AllArgsConstructor;
+import ru.danilenko.mapper.UserMapper;
 import ru.danilenko.model.User;
+import ru.danilenko.util.ConnectionToDB;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 /**
  * DAO for user entity
  */
+@AllArgsConstructor
 public class UserDAO {
-    /**
-     * list to hold users
-     */
-    private List<User> usersList = new ArrayList<>();
 
-    {
-        usersList.add(new User(1,"Admin@mail.ru","admin","Admin", "Admin", Roles.ROLE_ADMIN));
-        usersList.add(new User(2,"User2@mail.ru","user2","User2","User2", Roles.ROLE_USER));
-        usersList.add(new User(3,"User3@mail.ru","user3","User3","User3", Roles.ROLE_USER));
-        usersList.add(new User(4,"User4@mail.ru","user4","User4","User4", Roles.ROLE_USER));
-    }
-    /**
-     * static counter to generate user_id
-     */
-    private int id = usersList.size() +1;
+    UserMapper userMapper;
 
     /**
      * method to create new user
@@ -31,12 +25,24 @@ public class UserDAO {
      * @param password password
      * @param firstName first name
      * @param  lastName last name
+     * @param  role user's role
      * @return true after creation
      */
-    public boolean create(String email, String password, String firstName, String lastName) {
-            usersList.add(new User(id++, email, password, firstName,lastName, Roles.ROLE_USER));
-            return true;
-
+    public boolean create(String email, String password, String firstName, String lastName,String role) {
+        try {
+            PreparedStatement statement = ConnectionToDB.getConnection().
+                    prepareStatement("insert into entity.user(email,password,first_name,last_name,role) values(?,?,?,?,?)");
+            statement.setString(1, email);
+            statement.setString(2, password);
+            statement.setString(3, firstName);
+            statement.setString(4, lastName);
+            statement.setString(5, role);
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
     /**
      * method return a user from the list
@@ -44,7 +50,40 @@ public class UserDAO {
      * @return user based on email
      */
     public User findByEmail(String email) {
-        return usersList.stream().filter(person -> person.getEmail().equals(email)).findAny().orElse(null);
+        User user;
+        try {
+            PreparedStatement statement = ConnectionToDB.getConnection().prepareStatement("select * from entity.user where email = ?");
+            statement.setString(1, email);
+            ResultSet resultSet = statement.executeQuery();
+            List<User> users = userMapper.mapToUser(resultSet);
+            user = (users.isEmpty())?null:users.get(0);
+
+        } catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+        return user;
+    }
+
+    /**
+     * method return a user from the list
+     * @param userId user id
+     * @return user based on id
+     */
+    public User findById(int userId) {
+        User user;
+        try {
+            PreparedStatement statement = ConnectionToDB.getConnection().prepareStatement("select * from entity.user where user_id = ?");
+            statement.setInt(1, userId);
+            ResultSet resultSet = statement.executeQuery();
+            List<User> users = userMapper.mapToUser(resultSet);
+            user = (users.isEmpty())?null:users.get(0);
+
+        } catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+        return user;
     }
 
     /**
@@ -52,7 +91,17 @@ public class UserDAO {
      * @return list
      */
     public List<User> findAllUser() {
-        return usersList.stream().filter(u->u.getRole()!=Roles.ROLE_ADMIN).toList();
+        List<User> users = new ArrayList<>();
+        try {
+            Statement statement = ConnectionToDB.getConnection().createStatement();
+            String SQL = "select * from entity.user where role = 'USER' OR role = 'MODERATOR'";
+            ResultSet resultSet = statement.executeQuery(SQL);
+            users = userMapper.mapToUser(resultSet);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return  users;
+
     }
 
     /**
@@ -60,15 +109,32 @@ public class UserDAO {
      * @return list
      */
     public List<User> findAll() {
-        return usersList;
+        List<User> users = new ArrayList<>();
+        try {
+            Statement statement = ConnectionToDB.getConnection().createStatement();
+            String SQL = "select * from entity.user";
+            ResultSet resultSet = statement.executeQuery(SQL);
+            users = userMapper.mapToUser(resultSet);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return  users;
     }
 
     /**
      * method gives a moderator right to a user with user id
-     * @param user_id user id
+     * @param userId user id
      */
-    public void giveRight(int user_id) {
-        usersList.get(user_id-1).setRole(Roles.ROLE_MODERATOR);
+    public void giveRight(int userId, String role) {
+        try {
+            PreparedStatement statement = ConnectionToDB.getConnection().prepareStatement("update entity.user set role = ? where user_id = ?");
+            statement.setInt(2, userId);
+            statement.setString(1, role);
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
     }
 }
 

@@ -15,12 +15,22 @@ import liquibase.database.DatabaseFactory;
 import liquibase.database.jvm.JdbcConnection;
 import liquibase.exception.LiquibaseException;
 import liquibase.resource.ClassLoaderResourceAccessor;
+import ru.danilenko.dao.AuditDAO;
+import ru.danilenko.dao.CounterDAO;
+import ru.danilenko.dao.CounterTypeDAO;
+import ru.danilenko.dao.UserDAO;
+import ru.danilenko.liquibase.LiquibaseStart;
+import ru.danilenko.mapper.CounterMapper;
+import ru.danilenko.mapper.CounterTypeMapper;
+import ru.danilenko.mapper.UserMapper;
+import ru.danilenko.model.User;
+import ru.danilenko.util.ConnectionToDB;
 
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static org.postgresql.core.ConnectionFactory.openConnection;
@@ -37,40 +47,15 @@ public class Main {
      */
     public static void main(String[] args) {
 
+
+        LiquibaseStart.migration();
+
+
         Compilation compilation = new Compilation();
 
         compilation.appStart();
 
-//        final String URL = "jdbc:postgresql://localhost:5432/postgres";
-//        final String USERNAME = "y_lab";
-//        final String PASSWORD = "ylab";
-//
-//        Connection connection;
-//
-//
-//        try{
-//                Class.forName("org.postgresql.Driver");
-//            } catch (ClassNotFoundException e){
-//                e.printStackTrace();
-//            }
-//
-//            try {
-//                connection  = DriverManager.getConnection(URL,USERNAME, PASSWORD);
-//                Scope.child(new HashMap<>(), () -> {
-////            Connection connection = openConnection(); //your openConnection logic
-//                    Database database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(connection));
-//                    Liquibase liquibase = new liquibase.Liquibase("db/changelog/changelog.xml", new ClassLoaderResourceAccessor(), database);
-//                    database.setDefaultSchemaName("support");
-//                    CommandScope updateCommand = new CommandScope(UpdateCommandStep.COMMAND_NAME)
-//                            .addArgumentValue(DbUrlConnectionCommandStep.DATABASE_ARG, liquibase.getDatabase())
-//                            .addArgumentValue(UpdateCommandStep.CHANGELOG_FILE_ARG, "db/changelog/changelog.xml");
-//                    updateCommand.execute();
-//                });
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            } catch (Exception e) {
-//                throw new RuntimeException(e);
-//            }
+
 
 
     }

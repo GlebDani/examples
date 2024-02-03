@@ -31,6 +31,8 @@ public class CounterService {
      */
     public Optional<Counter> getCurrentValue(int userId, int counterTypeId) {
         List<Counter> tempList =  counterDAO.getAllCertainType(userId, counterTypeId);
+        if(tempList.isEmpty())
+            return Optional.empty();
         return Optional.of(tempList.get(tempList.size()-1));
   }
 
@@ -41,8 +43,8 @@ public class CounterService {
      * @param counterTypeId counter Type Id
      * @param counterValue counterTypeValue
      */
-    public void insertValue(int userId,String date, int counterValue,int counterTypeId){
-        counterDAO.createNew(userId, date, counterValue, counterTypeId);
+    public boolean insertValue(int userId,String date, int counterValue,int counterTypeId){
+        return counterDAO.createNew(userId, date, counterValue, counterTypeId);
     }
     /**
      * method return Optional object of Counter class for certain month

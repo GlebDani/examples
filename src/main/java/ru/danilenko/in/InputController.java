@@ -2,8 +2,7 @@ package ru.danilenko.in;
 
 import lombok.AllArgsConstructor;
 import ru.danilenko.model.User;
-import ru.danilenko.service.AssistanceService;
-import ru.danilenko.service.CounterTypeService;
+import ru.danilenko.util.InputAssistant;
 
 
 /**
@@ -15,8 +14,8 @@ import ru.danilenko.service.CounterTypeService;
 public class InputController {
 
 
-    private AssistanceService assistanceService;
-    private UserController userController;
+    private InputAssistant inputAssistant;
+    private ActionController actionController;
 
 
 
@@ -44,41 +43,41 @@ public class InputController {
 
 
     public boolean userAction(User user){
-        String operationType = String.valueOf(assistanceService.readIntValue(0,4));
+        String operationType = String.valueOf(inputAssistant.readIntValue(0,4));
         if(operationType.equals("0"))
             return false;
         return switch (operationType){
-            case "1" -> userController.getCurrentValue(user);
-            case "2" -> userController.insertValue(user);
-            case "3" -> userController.getValueForCertainMonth(user);
-            case "4"-> userController.getHistory(user);
+            case "1" -> actionController.getCurrentValue(user);
+            case "2" -> actionController.insertValue(user);
+            case "3" -> actionController.getValueForCertainMonth(user);
+            case "4"-> actionController.getHistory(user);
             default -> false;
         };
     }
     public boolean moderatorAction( User user){
-        String operationType = String.valueOf(assistanceService.readIntValue(0,5));
+        String operationType = String.valueOf(inputAssistant.readIntValue(0,5));
         if(operationType.equals("0"))
             return false;
         return switch (operationType){
-            case "1" -> userController.getCurrentValue(user);
-            case "2" -> userController.insertValue(user);
-            case "3" -> userController.getValueForCertainMonth(user);
-            case "4"-> userController.getHistory(user);
-            case "5"-> userController.getAllUsersInfo(user);
+            case "1" -> actionController.getCurrentValue(user);
+            case "2" -> actionController.insertValue(user);
+            case "3" -> actionController.getValueForCertainMonth(user);
+            case "4"-> actionController.getHistory(user);
+            case "5"-> actionController.getAllUsersInfo(user);
             default -> false;
         };
 
 
     }
     public boolean adminAction( User user){
-        String operationType = String.valueOf(assistanceService.readIntValue(0,4));
+        String operationType = String.valueOf(inputAssistant.readIntValue(0,4));
         if(operationType.equals("0"))
             return false;
         return switch (operationType){
-            case "1" -> userController.getAllUsersInfo(user);
-            case "2" -> userController.giveModeratorRights(user);
-            case "3"-> userController.usersAudit();
-            case "4" -> userController.addNewCounter(user);
+            case "1" -> actionController.getAllUsersInfo(user);
+            case "2" -> actionController.giveModeratorRights(user);
+            case "3"-> actionController.usersAudit();
+            case "4" -> actionController.addNewCounter(user);
             default -> false;
         };
     }

@@ -6,7 +6,13 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
 >
     <!-- Здесь мы позже напишем скрипт -->
-    <include file="create_changeset_user_table.xml" relativeToChangelogFile="true"/>
-    <include file="insert_changeset_user_table.xml" relativeToChangelogFile="true"/>
+    <include file="creation/create_changeset_user_table.xml" relativeToChangelogFile="true"/>
+    <include file="insertion/insert_changeset_user_table.xml" relativeToChangelogFile="true"/>
+    <include file="creation/create_changeset_counterType_table.xml" relativeToChangelogFile="true"/>
+    <include file="insertion/insert_changeset_counterType_table.xml" relativeToChangelogFile="true"/>
+    <include file="creation/create_changeset_audit_table.xml" relativeToChangelogFile="true"/>
+    <include file="creation/create_changeset_counter_table.xml" relativeToChangelogFile="true"/>
+    <include file="insertion/insert_changeset_counter_table.xml" relativeToChangelogFile="true"/>
+
 
 </databaseChangeLog>

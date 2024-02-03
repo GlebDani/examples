@@ -6,10 +6,10 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
 
-    <changeSet id="create_sequence_for_table_user" author="GD">
-        <createSequence sequenceName="seq_sequence_for_table_user"
+    <changeSet id="create_sequence_for_user_table" author="GD">
+        <createSequence sequenceName="seq_sequence_for_user_table"
                         dataType="bigint"
-                        schemaName="support"
+                        schemaName="entity"
                         incrementBy="1"
                         minValue="1"
                         startValue="1"/>
@@ -20,7 +20,7 @@
         <!-- Прописываем создание таблицы genre-->
         <createTable tableName="user" schemaName="entity">
             <!--Создаем поля -->
-            <column name="user_id" type="bigint" defaultValueComputed="nextval('support.seq_sequence_for_table_user')">>
+            <column name="user_id" type="bigint" defaultValueComputed="nextval('entity.seq_sequence_for_user_table')">>
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="email" type="varchar(64)">

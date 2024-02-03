@@ -13,8 +13,8 @@ public class AuditService {
 
 
 
-    public void addAction(String date, int userID, String desc){
-        auditDAO.addAction(date,userID, desc);
+    public boolean addAction(String date, int userID, String desc){
+        return auditDAO.addAction(date,userID, desc);
     }
     /**
      * method prints all audit action for chosen user

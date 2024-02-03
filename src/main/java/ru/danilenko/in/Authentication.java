@@ -1,18 +1,16 @@
 package ru.danilenko.in;
 
 
-import ru.danilenko.dao.UserDAO;
 import ru.danilenko.model.User;
-import ru.danilenko.service.AssistanceService;
 import ru.danilenko.service.UserService;
+import ru.danilenko.util.InputAssistant;
 
-import java.util.Scanner;
 /**
  * class to perform authentication
  */
 public class Authentication {
 
-    private AssistanceService assistanceService;
+    private InputAssistant inputAssistant;
     private UserService userService;
     /**
      * email variable
@@ -31,10 +29,10 @@ public class Authentication {
      */
     private String lastName;
 
-    public Authentication(UserService userService, AssistanceService assistanceService) {
+    public Authentication(UserService userService, InputAssistant inputAssistant) {
 
         this.userService = userService;
-        this.assistanceService = assistanceService;
+        this.inputAssistant = inputAssistant;
 
     }
     /**
@@ -46,8 +44,7 @@ public class Authentication {
         getAuthInfo();
         if(userService.findByEmail(email)==null) {
             getSingUpInfo();
-            return userService.create(email,password,firstName,lastName);
-
+            return userService.create(email,password,firstName,lastName, "USER");
         }
         else{
             System.out.println("Name already exists");
@@ -73,19 +70,19 @@ public class Authentication {
      */
     private void getAuthInfo(){
 
-        email = assistanceService.getInput("To quit type \"/\" \nEmail");
+        email = inputAssistant.getInput("To quit type \"/\" \nEmail");
         if(email.equals("/")) {
             startUp();
         }
-        password = assistanceService.getInput("Password");
+        password = inputAssistant.getInput("Password");
 
     }
     /**
      * method to get first and last names
      */
     private void getSingUpInfo(){
-        firstName = assistanceService.getInput("First name");
-        lastName = assistanceService.getInput("Last name");
+        firstName = inputAssistant.getInput("First name");
+        lastName = inputAssistant.getInput("Last name");
     }
 
     /**
@@ -94,7 +91,7 @@ public class Authentication {
      */
     public User startUp(){
         System.out.print("Welcome.\n To log in type \"L\"\n To sing up type \"S\" \n To quit \"/\"\n");
-        String action = assistanceService.nextLine().toLowerCase();
+        String action = inputAssistant.nextLine().toLowerCase();
         User user;
         if(action.equals("l")) {
             do {

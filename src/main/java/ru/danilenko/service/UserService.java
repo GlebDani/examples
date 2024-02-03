@@ -25,14 +25,14 @@ public class UserService {
      * @param userId id of chosen user
      */
     public void giveRight(int userId) {
-        userDAO.giveRight(userId);
+        userDAO.giveRight(userId,"MODERATOR");
     }
 
     public User findByEmail(String email) {
         return userDAO.findByEmail(email);
     }
 
-    public boolean create(String email, String password, String firstName, String lastName) {
-        return userDAO.create(email,password,firstName,lastName);
+    public boolean create(String email, String password, String firstName, String lastName, String role) {
+        return userDAO.create(email,password,firstName,lastName, role);
     }
 }
