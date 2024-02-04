@@ -1,15 +1,22 @@
 package ru.danilenko.mapper;
 
 import ru.danilenko.model.Audit;
-import ru.danilenko.model.Counter;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * class for Audit {@link  Audit} mapping
+ */
 public class AuditMapper {
-
+    /**
+     * method returns list of obtained audit notes
+     * @param resultSet after sql query
+     * @return List<Audit>
+     */
     public List<Audit> mapToAudit(ResultSet resultSet) {
         List<Audit> auditList = new ArrayList<>();
         try {

@@ -129,7 +129,7 @@ public class ActionController {
             return true;
         System.out.println("History for user "+userList.get(value-1).getFirstName() +" "+userList.get(value-1).getLastName()+ " "+userList.get(value-1).getEmail()+" for "+counterTypeService.findById(counterTypeId).getDescription());
         List<Counter> counterList = counterService.getAllCertainType(userList.get(value-1).getId(), counterTypeId);
-        auditService.addAction(DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm").format(LocalDateTime.now()),user.getId(), "get all users history");
+        auditService.addAction(DateTimeFormatter.ofPattern("dd-MM-yyyy HH-mm").format(LocalDateTime.now()),user.getId(), "get history for user with user_id " + userList.get(value-1).getId());
         for(Counter counter : counterList){
             System.out.println("On " + counter.getDate() + " type is "+counterTypeService.findById(counter.getCounterTypeId()).getDescription()+ " value " + counter.getCounterMeasure());
         }
@@ -162,8 +162,9 @@ public class ActionController {
         int value = inputAssistant.listOfUsers(userList);
         if (value==0)
             return true;// will return to main menu with actions
-        List<Audit> auditList = auditService.getAllForUser(value);
+        System.out.println("audit val"+value);
         User user = userList.get(value-1);
+        List<Audit> auditList = auditService.getAllForUser(user.getId());
         for (Audit audit:auditList){
             System.out.println("User "+user.getFirstName() + " "+ user.getLastName() + " " + audit.getOperation_desc() + " at "+audit.getDate());
         }

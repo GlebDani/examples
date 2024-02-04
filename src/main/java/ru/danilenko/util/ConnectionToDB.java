@@ -2,39 +2,61 @@ package ru.danilenko.util;
 
 
 import java.io.FileInputStream;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * class for db connection
+ */
 public class ConnectionToDB {
 
-    private ConnectionToDB(){
+    private String url;
+    private String username;
+    private String password;
 
+//    private String driver;
+
+
+    public ConnectionToDB(String url, String username,String password){
+        this.url = url;
+        this.username = username;
+        this.password = password;
+    }
+    public ConnectionToDB(){
+        Properties properties = new Properties();
+        try {
+            properties.load(new FileInputStream("src/main/resources/database.properties"));
+            url = properties.getProperty("url");
+            username = properties.getProperty("username_db");
+            password = properties.getProperty("password");
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
-    public static  Connection getConnection() {
-
-
-//        final String URL = "jdbc:postgresql://localhost:5432/Y-lab_bd";
-//        final String USERNAME = "y_lab";
-//        final String PASSWORD = "ylab";
+    /**
+     * static method to get connection to db
+     * @return Connection
+     */
+    public Connection getConnection() {
 
         Connection connection = null;
 
         try{
-                Properties properties = new Properties();
-                properties.load(new FileInputStream("src/main/resources/database.properties"));
-                Class.forName(properties.getProperty("driver"));
-                connection  = DriverManager.getConnection(properties.getProperty("url"),
-                                                          properties.getProperty("username_db"),
-                                                          properties.getProperty("password"));
+                Class.forName("org.postgresql.Driver");
+                connection  = DriverManager.getConnection(url, username,password);
 
-        } catch (ClassNotFoundException | IOException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return connection;
     }
+
 
 }

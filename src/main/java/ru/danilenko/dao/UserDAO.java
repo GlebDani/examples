@@ -17,7 +17,8 @@ import java.util.List;
 @AllArgsConstructor
 public class UserDAO {
 
-    UserMapper userMapper;
+    private UserMapper userMapper;
+    private ConnectionToDB connectionToDB;
 
     /**
      * method to create new user
@@ -30,7 +31,7 @@ public class UserDAO {
      */
     public boolean create(String email, String password, String firstName, String lastName,String role) {
         try {
-            PreparedStatement statement = ConnectionToDB.getConnection().
+            PreparedStatement statement = connectionToDB.getConnection().
                     prepareStatement("insert into entity.user(email,password,first_name,last_name,role) values(?,?,?,?,?)");
             statement.setString(1, email);
             statement.setString(2, password);
@@ -52,7 +53,7 @@ public class UserDAO {
     public User findByEmail(String email) {
         User user;
         try {
-            PreparedStatement statement = ConnectionToDB.getConnection().prepareStatement("select * from entity.user where email = ?");
+            PreparedStatement statement = connectionToDB.getConnection().prepareStatement("select * from entity.user where email = ?");
             statement.setString(1, email);
             ResultSet resultSet = statement.executeQuery();
             List<User> users = userMapper.mapToUser(resultSet);
@@ -73,7 +74,7 @@ public class UserDAO {
     public User findById(int userId) {
         User user;
         try {
-            PreparedStatement statement = ConnectionToDB.getConnection().prepareStatement("select * from entity.user where user_id = ?");
+            PreparedStatement statement = connectionToDB.getConnection().prepareStatement("select * from entity.user where user_id = ?");
             statement.setInt(1, userId);
             ResultSet resultSet = statement.executeQuery();
             List<User> users = userMapper.mapToUser(resultSet);
@@ -93,7 +94,7 @@ public class UserDAO {
     public List<User> findAllUser() {
         List<User> users = new ArrayList<>();
         try {
-            Statement statement = ConnectionToDB.getConnection().createStatement();
+            Statement statement = connectionToDB.getConnection().createStatement();
             String SQL = "select * from entity.user where role = 'USER' OR role = 'MODERATOR'";
             ResultSet resultSet = statement.executeQuery(SQL);
             users = userMapper.mapToUser(resultSet);
@@ -111,7 +112,7 @@ public class UserDAO {
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
         try {
-            Statement statement = ConnectionToDB.getConnection().createStatement();
+            Statement statement = connectionToDB.getConnection().createStatement();
             String SQL = "select * from entity.user";
             ResultSet resultSet = statement.executeQuery(SQL);
             users = userMapper.mapToUser(resultSet);
@@ -127,7 +128,7 @@ public class UserDAO {
      */
     public void giveRight(int userId, String role) {
         try {
-            PreparedStatement statement = ConnectionToDB.getConnection().prepareStatement("update entity.user set role = ? where user_id = ?");
+            PreparedStatement statement = connectionToDB.getConnection().prepareStatement("update entity.user set role = ? where user_id = ?");
             statement.setInt(2, userId);
             statement.setString(1, role);
             statement.executeUpdate();

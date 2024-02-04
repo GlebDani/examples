@@ -13,16 +13,24 @@ import ru.danilenko.util.ConnectionToDB;
 
 import java.sql.Connection;
 
+/**
+ * class for implementation Liquibase migration
+ */
 public class LiquibaseStart {
 
-    public LiquibaseStart(){
+
+
+    private LiquibaseStart(){
 
     }
 
-    public static void migration() {
+    /**
+     * method migrates Liquibase xml commands
+     */
+    public static void migration(ConnectionToDB connectionToDB) {
 
         try {
-                Connection connection = ConnectionToDB.getConnection();
+                Connection connection = connectionToDB.getConnection();
                 Database database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(connection));
                 database.setDefaultSchemaName("support");
                 Liquibase liquibase = new liquibase.Liquibase("db/changelog/changelog.xml", new ClassLoaderResourceAccessor(), database);

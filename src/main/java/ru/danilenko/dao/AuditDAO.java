@@ -23,7 +23,9 @@ import java.util.Map;
 @AllArgsConstructor
 public class AuditDAO {
 
-    AuditMapper auditMapper;
+    private AuditMapper auditMapper;
+    private ConnectionToDB connectionToDB;
+
 
     /**
      * method to add a new audit action
@@ -34,7 +36,7 @@ public class AuditDAO {
     public boolean addAction(String date, int userId, String operationDesc){
 
         try {
-            PreparedStatement statement = ConnectionToDB.getConnection().
+            PreparedStatement statement = connectionToDB.getConnection().
                     prepareStatement("insert into entity.audit(date,user_id,description) values(?,?,?)");
             statement.setString(1, date);
             statement.setInt(2, userId);
@@ -55,7 +57,7 @@ public class AuditDAO {
     public List<Audit> getAllForUser(int userId) {
         List<Audit> auditList = new ArrayList<>();
         try {
-            PreparedStatement statement = ConnectionToDB.getConnection().prepareStatement("select * from entity.audit where user_id = ?");
+            PreparedStatement statement = connectionToDB.getConnection().prepareStatement("select * from entity.audit where user_id = ?");
             statement.setInt(1, userId);
             ResultSet resultSet = statement.executeQuery();
             auditList = auditMapper.mapToAudit(resultSet);

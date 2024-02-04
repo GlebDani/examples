@@ -2,10 +2,12 @@ package ru.danilenko;
 
 import ru.danilenko.dao.*;
 import ru.danilenko.in.Authentication;
+import ru.danilenko.liquibase.LiquibaseStart;
 import ru.danilenko.mapper.AuditMapper;
 import ru.danilenko.mapper.CounterMapper;
 import ru.danilenko.mapper.CounterTypeMapper;
 import ru.danilenko.mapper.UserMapper;
+import ru.danilenko.util.ConnectionToDB;
 import ru.danilenko.util.InputAssistant;
 import ru.danilenko.in.InputController;
 import ru.danilenko.in.ActionController;
@@ -20,11 +22,11 @@ import java.util.Scanner;
 
 public class Compilation {
 
-
-    private AuditDAO auditDAO = new AuditDAO(new AuditMapper());
-    private CounterDAO counterDAO = new CounterDAO(new CounterMapper());
-    private CounterTypeDAO counterTypeDAO = new CounterTypeDAO(new CounterTypeMapper());
-    private UserDAO userDAO = new UserDAO(new UserMapper());
+    private ConnectionToDB connectionToDB = new ConnectionToDB();
+    private AuditDAO auditDAO = new AuditDAO(new AuditMapper(), connectionToDB);
+    private CounterDAO counterDAO = new CounterDAO(new CounterMapper(),connectionToDB);
+    private CounterTypeDAO counterTypeDAO = new CounterTypeDAO(new CounterTypeMapper(),connectionToDB);
+    private UserDAO userDAO = new UserDAO(new UserMapper(),connectionToDB);
     private Scanner scanner = new Scanner(System.in);
     private InputAssistant inputAssistant = new InputAssistant(scanner);
 
@@ -56,6 +58,12 @@ public class Compilation {
      * method starts the application and keep us in the system until we want to close the app
      */
     public void appStart(){
+        LiquibaseStart.migration(connectionToDB);
+        try {
+            Thread.sleep(1000);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         while (true){
             User user = authentication.startUp();
             boolean inProgress = true;

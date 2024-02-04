@@ -19,6 +19,7 @@ import java.util.List;
 public class CounterTypeDAO {
 
     private CounterTypeMapper counterTypeMapper;
+    private ConnectionToDB connectionToDB;
 
 
     /**
@@ -27,7 +28,7 @@ public class CounterTypeDAO {
      */
     public boolean addNewCounterType(String name){
         try {
-            PreparedStatement statement = ConnectionToDB.getConnection().
+            PreparedStatement statement = connectionToDB.getConnection().
                     prepareStatement("insert into entity.countertype(description) values(?)");
             statement.setString(1, name);
             statement.executeUpdate();
@@ -45,7 +46,7 @@ public class CounterTypeDAO {
     public List<CounterType> getAll(){
         List<CounterType> counterTypeList = new ArrayList<>();
         try {
-            Statement statement = ConnectionToDB.getConnection().createStatement();
+            Statement statement = connectionToDB.getConnection().createStatement();
             String SQL = "select * from entity.countertype";
             ResultSet resultSet = statement.executeQuery(SQL);
             counterTypeList = counterTypeMapper.mapToCounterType(resultSet);
@@ -63,7 +64,7 @@ public class CounterTypeDAO {
     public CounterType findById(int counterTypeId){
         CounterType counterType;
         try {
-            PreparedStatement statement = ConnectionToDB.getConnection().prepareStatement("select * from entity.countertype where countertype_id = ?");
+            PreparedStatement statement = connectionToDB.getConnection().prepareStatement("select * from entity.countertype where countertype_id = ?");
             statement.setInt(1, counterTypeId);
             ResultSet resultSet = statement.executeQuery();
             List<CounterType> counterTypeList= counterTypeMapper.mapToCounterType(resultSet);

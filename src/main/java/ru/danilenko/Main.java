@@ -48,12 +48,14 @@ public class Main {
     public static void main(String[] args) {
 
 
-        LiquibaseStart.migration();
 
 
-//        Compilation compilation = new Compilation();
-//
-//        compilation.appStart();
+
+        Compilation compilation = new Compilation();
+
+        compilation.appStart();
+
+//        LiquibaseStart.migration(new ConnectionToDB());
 
 
 

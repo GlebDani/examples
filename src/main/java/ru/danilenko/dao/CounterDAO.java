@@ -24,25 +24,8 @@ import java.util.Map;
 @AllArgsConstructor
 public class CounterDAO{
 
-    CounterMapper counterMapper;
-    /**
-     * method which
-     * @param userId users id
-     * @return list of counters for certain User with
-     */
-    public List<Counter> findByUserId(int userId){
-        List<Counter> counters = new ArrayList<>();
-        try {
-            PreparedStatement statement = ConnectionToDB.getConnection().prepareStatement("select * from entity.counter where user_id = ?");
-            statement.setInt(1, userId);
-            ResultSet resultSet = statement.executeQuery();
-            counters = counterMapper.mapToCounter(resultSet);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return counters;
-    }
+    private CounterMapper counterMapper;
+    private ConnectionToDB connectionToDB;
 
     /**
      * method which create new note for
@@ -53,7 +36,7 @@ public class CounterDAO{
      */
     public boolean createNew(int userId,  String date, int counterValue,int counterTypeId) {
         try {
-            PreparedStatement statement = ConnectionToDB.getConnection().
+            PreparedStatement statement = connectionToDB.getConnection().
                     prepareStatement("insert into entity.counter(user_id,date,counterMeasure,counterType_id) values(?,?,?,?)");
             statement.setInt(1, userId);
             statement.setString(2, date);
@@ -77,7 +60,7 @@ public class CounterDAO{
     public List<Counter> getAllCertainType(int userId, int counterTypeId) {
         List<Counter> counters = new ArrayList<>();
         try {
-            PreparedStatement statement = ConnectionToDB.getConnection().prepareStatement("select * from entity.counter where user_id = ? AND counterType_id = ?");
+            PreparedStatement statement = connectionToDB.getConnection().prepareStatement("select * from entity.counter where user_id = ? AND counterType_id = ?");
             statement.setInt(1, userId);
             statement.setInt(2, counterTypeId);
             ResultSet resultSet = statement.executeQuery();

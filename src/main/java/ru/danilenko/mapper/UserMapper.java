@@ -1,5 +1,6 @@
 package ru.danilenko.mapper;
 
+
 import ru.danilenko.model.User;
 
 import java.sql.ResultSet;
@@ -7,8 +8,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * class for Audit {@link  User} mapping
+ */
 public class UserMapper {
-
+    /**
+     * method returns list of obtained users
+     * @param resultSet after sql query
+     * @return List<User>
+     */
     public List<User> mapToUser(ResultSet resultSet){
         List<User> users = new ArrayList<>();
         try{

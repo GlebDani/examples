@@ -4,25 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83e1fa58-8db3-417b-aebf-0b594ba12742" name="Changes" comment="second commit in branch_3">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Testing/in/AuthenticationTest.java" afterDir="false" />
+    <list default="true" id="83e1fa58-8db3-417b-aebf-0b594ba12742" name="Changes" comment="third commit in branch_3">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/Y-lab_bd.KEyRJw/schema/entity.4-Odsg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/Y-lab_bd.KEyRJw/schema/entity.4-Odsg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/Y-lab_bd.KEyRJw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/Y-lab_bd.KEyRJw/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/Y-lab_bd.KEyRJw/schema/support.z39ykQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/Y-lab_bd.KEyRJw/schema/support.z39ykQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/Compilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/Compilation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/AuditDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/AuditDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/CounterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/CounterDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/CounterTypeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/CounterTypeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/ActionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/AuditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/AuditService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/CounterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/CounterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/CounterTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/CounterTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/liquibase/LiquibaseStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/liquibase/LiquibaseStart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/mapper/AuditMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/mapper/AuditMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/mapper/CounterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/mapper/CounterMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/mapper/CounterTypeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/mapper/CounterTypeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/util/ConnectionToDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/util/ConnectionToDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/util/InputAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/util/InputAssistant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/AuthTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/CounterDAOTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/CounterTypeDAOTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/InputControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/UserDAOTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/UserServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/in/ActionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testing/in/ActionControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/danil/Desktop/Programming stuff/Tinkoff1",
+    "last_opened_file_path": "C:/Users/danil/Desktop/Y_lab/hometask1/src/test/java/Testing/dao",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -77,6 +80,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danil\Desktop\Y_lab\hometask1\src\test\java\Testing\dao" />
       <recent name="C:\Users\danil\Desktop\Y_lab\hometask1\src\main\resources\db\changelog\insertion" />
       <recent name="C:\Users\danil\Desktop\Y_lab\hometask1\src" />
     </key>
@@ -99,7 +103,8 @@
       <option name="presentableId" value="Default" />
       <updated>1706924496697</updated>
       <workItem from="1706924497701" duration="135000" />
-      <workItem from="1706955862242" duration="30022000" />
+      <workItem from="1706955862242" duration="30737000" />
+      <workItem from="1707064803773" duration="11708000" />
     </task>
     <task id="LOCAL-00001" summary="first commit in branch_3">
       <option name="closed" value="true" />
@@ -117,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706971994434</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="third commit in branch_3">
+      <option name="closed" value="true" />
+      <created>1707054934179</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707054934179</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +141,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="branch_3" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -137,18 +162,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit in branch_3" />
     <MESSAGE value="second commit in branch_3" />
-    <option name="LAST_COMMIT_MESSAGE" value="second commit in branch_3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/danilenko/model/User.java</url>
-          <line>17</line>
-          <properties field="id" class="ru.danilenko.model.User" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="third commit in branch_3" />
+    <option name="LAST_COMMIT_MESSAGE" value="third commit in branch_3" />
   </component>
 </project>
