@@ -40,7 +40,7 @@ public class CounterService {
      * method inserts value if not exists
      * @param userId id of logged user
      * @param date current date MM-yyyy
-     * @param counterTypeId counter Type Id
+     * @param counterTypeId counter Type id
      * @param counterValue counterTypeValue
      */
     public boolean insertValue(int userId,String date, int counterValue,int counterTypeId){
@@ -58,14 +58,5 @@ public class CounterService {
     }
 
 
-    /**
-     * returns all counters for certain user
-     * @param userId  id for chosen user
-     * @return List<Counter>
-     */
-
-    public List<Counter> findByUserId(int userId){
-        return counterDAO.findByUserId(userId);
-    }
 
 }

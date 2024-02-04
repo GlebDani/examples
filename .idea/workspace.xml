@@ -4,42 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83e1fa58-8db3-417b-aebf-0b594ba12742" name="Changes" comment="first commit in branch_3">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="83e1fa58-8db3-417b-aebf-0b594ba12742" name="Changes" comment="second commit in branch_3">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Testing/in/AuthenticationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/y_lab_db.9nqueA/schema/entity.4-Odsg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/y_lab_db.9nqueA/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/y_lab_db.9nqueA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/y_lab_db.9nqueA/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3f564f50-88c9-4af2-aee3-d881bc0410f2/storage_v2/_src_/database/y_lab_db.9nqueA/schema/support.z39ykQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/Compilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/Compilation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/Enum/Roles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/AuditDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/AuditDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/CounterDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/CounterDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/CounterTypeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/CounterTypeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/ActionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/ActionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/InputController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/InputController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/in/ActionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/model/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/model/Counter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/model/CounterType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/model/CounterType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/AssistanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/util/InputAssistant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/AuditService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/AuditService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/CounterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/CounterService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/CounterTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/CounterTypeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/changelog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changelog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/create_changeset_user_table.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/creation/create_changeset_user_table.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/insert_changeset_user_table.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/insertion/insert_changeset_user_table.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/liquibase.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/CounterTypeDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testing/CounterTypeDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/UserDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testing/UserDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/danilenko/util/InputAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/danilenko/util/InputAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/AuthTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/CounterDAOTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/CounterTypeDAOTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/InputControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/UserDAOTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testing/UserServiceTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +86,7 @@
       <recent name="C:\Users\danil\Desktop\Y_lab\hometask1" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Testing.mapper" />
       <recent name="ru.danilenko.in" />
     </key>
   </component>
@@ -115,7 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1706924496697</updated>
       <workItem from="1706924497701" duration="135000" />
-      <workItem from="1706955862242" duration="15274000" />
+      <workItem from="1706955862242" duration="30022000" />
     </task>
     <task id="LOCAL-00001" summary="first commit in branch_3">
       <option name="closed" value="true" />
@@ -125,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706924610432</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="second commit in branch_3">
+      <option name="closed" value="true" />
+      <created>1706971994434</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706971994434</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +136,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit in branch_3" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit in branch_3" />
+    <MESSAGE value="second commit in branch_3" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit in branch_3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

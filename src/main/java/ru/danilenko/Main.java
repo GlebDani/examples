@@ -51,9 +51,9 @@ public class Main {
         LiquibaseStart.migration();
 
 
-        Compilation compilation = new Compilation();
-
-        compilation.appStart();
+//        Compilation compilation = new Compilation();
+//
+//        compilation.appStart();
 
 
 

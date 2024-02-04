@@ -2,10 +2,12 @@ package ru.danilenko.util;
 
 import lombok.AllArgsConstructor;
 import ru.danilenko.model.User;
+import ru.danilenko.service.UserService;
 
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
 
 @AllArgsConstructor
 public class InputAssistant {

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+>
+    <changeSet id="insert_into_counter" author="GD">
+    <insert tableName="counter" schemaName="entity">
+        <column name="user_id" value="2"/>
+        <column name="date" value="10-2023"/>
+        <column name="countermeasure" value="110"/>
+        <column name="countertype_id" value="1"/>
+    </insert>
+        <insert tableName="counter" schemaName="entity">
+            <column name="user_id" value="2"/>
+            <column name="date" value="11-2023"/>
+            <column name="countermeasure" value="2000"/>
+            <column name="countertype_id" value="1"/>
+        </insert>
+        <insert tableName="counter" schemaName="entity">
+            <column name="user_id" value="2"/>
+            <column name="date" value="12-2023"/>
+            <column name="countermeasure" value="300"/>
+            <column name="countertype_id" value="1"/>
+        </insert>
+        <insert tableName="counter" schemaName="entity">
+            <column name="user_id" value="2"/>
+            <column name="date" value="12-2023"/>
+            <column name="countermeasure" value="110"/>
+            <column name="countertype_id" value="2"/>
+        </insert>
+        <insert tableName="counter" schemaName="entity">
+            <column name="user_id" value="2"/>
+            <column name="date" value="01-2024"/>
+            <column name="countermeasure" value="450"/>
+            <column name="countertype_id" value="1"/>
+        </insert>
+        <insert tableName="counter" schemaName="entity">
+            <column name="user_id" value="2"/>
+            <column name="date" value="01-2024"/>
+            <column name="countermeasure" value="250"/>
+            <column name="countertype_id" value="2"/>
+        </insert>
+        <insert tableName="counter" schemaName="entity">
+            <column name="user_id" value="3"/>
+            <column name="date" value="12-2023"/>
+            <column name="countermeasure" value="80"/>
+            <column name="countertype_id" value="1"/>
+        </insert>
+        <insert tableName="counter" schemaName="entity">
+            <column name="user_id" value="3"/>
+            <column name="date" value="01-2024"/>
+            <column name="countermeasure" value="120"/>
+            <column name="countertype_id" value="3"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

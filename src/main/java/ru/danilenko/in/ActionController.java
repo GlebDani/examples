@@ -209,12 +209,6 @@ public class ActionController {
             return false;
     }
 
-    /**
-     * method return integer of chosen user
-     * @param userList list of users available to choose
-     * @return integer with chosen user id
-     */
-
 
 
     /**

@@ -39,7 +39,7 @@ public class Authentication {
      * method to sing up
      * @return true if account created
      */
-    public boolean singUp(){
+    private boolean singUp(){
         System.out.print("Create your account info\n");
         getAuthInfo();
         if(userService.findByEmail(email)==null) {
@@ -55,7 +55,7 @@ public class Authentication {
      * method to log in
      * @return User which logs
      */
-    public User logIn(){
+    private User logIn(){
         System.out.print("Enter your account info\n");
         getAuthInfo();
         if(checkValidity(email,password))
@@ -93,36 +93,33 @@ public class Authentication {
         System.out.print("Welcome.\n To log in type \"L\"\n To sing up type \"S\" \n To quit \"/\"\n");
         String action = inputAssistant.nextLine().toLowerCase();
         User user;
-        if(action.equals("l")) {
-            do {
-                user = logIn();
-            } while (user == null);
-            return user;
-        }
-        else if(action.equals("s")){
-            boolean sing;
-            do{
-                sing = singUp();
-            }while (!sing);
-            do {
-                user = logIn();
-            } while (user == null);
-            return user;
+        switch (action) {
+            case "l" -> {
+                do {
+                    user = logIn();
+                } while (user == null);
+                return user;
             }
-        else if(action.equals("/")) {
-            System.exit(0);
-            return null;
+            case "s" -> {
+                boolean sing;
+                do {
+                    sing = singUp();
+                } while (!sing);
+                do {
+                    user = logIn();
+                } while (user == null);
+                return user;
+            }
+            case "/" -> {
+                System.exit(0);
+                return null;
+            }
+            default -> {
+                return startUp();
+            }
         }
-        else
-            return startUp();
 
     }
-
-    /**
-     * method to get users info
-     * @param parameter to transfer the parameter name
-     * @return siring
-     */
 
 
     /**
@@ -131,7 +128,7 @@ public class Authentication {
      * @param password user's password
      * @return true if password and email are right
      */
-    public boolean checkValidity(String email, String password) {
+    private boolean checkValidity(String email, String password) {
         return userService.findByEmail(email) != null && userService.findByEmail(email).getPassword().equals(password);
     }
 
